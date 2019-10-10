@@ -10,13 +10,15 @@
         $nposts = $_POST['nposts'];
         $page = $_POST['page'];
         $exclude = $_POST['exclude'];
+        $offset = $page * $nposts;
+        
         if(isset($page) && isset($posttype) && isset($nposts)){
             
             if($exclude == '0'){
 
                 $args = array(
                 'posts_per_page' => $nposts,
-                'offset'         => $page,
+                'offset'         => $offset,
                 'post_type'       => $posttype
                 );
 
@@ -24,9 +26,10 @@
 
                 $args = array(
                 'posts_per_page' => $nposts,
-                'offset'         => $page,
+                'offset'         => $offset,
                 'post_type'      => $posttype,
                 'exclude'        => $exclude
+                
                 );
             }
 
@@ -42,6 +45,7 @@
                     $excerpt=get_the_excerpt($selpost->ID);
                     $permalink=get_permalink($selpost->ID);
                     $temparr=Array(
+                        'offset' => $offset,
                         "postid"=>$selpost->ID,
                         "title"=>trim($selpost->post_title),
                         "short"=>trim($excerpt),

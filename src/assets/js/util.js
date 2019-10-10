@@ -1,5 +1,4 @@
-//get post list
-function loadMore(type,page,nposts,exclude){
+function firstLoad(idElement,type,page,nposts,exclude){
 
    var dados = {
       'type': type,
@@ -8,19 +7,91 @@ function loadMore(type,page,nposts,exclude){
       'exclude': exclude,
       'action': 'postList'
    }
-      var postarray = new Array();
+ 
    $.ajax({
       type: 'POST',
       url: window.location.origin + '/posfg/wp-admin/admin-ajax.php',
       data: dados,
-      async: false,
       success: function( response ){
-        
-        postarray = JSON.parse(response);
+        posts = JSON.parse(response);
+        var row = 0;
+
+        //busca os post ao carregar a pagina
+        while (row < posts.length) {
+
+           var content = contentGenerator('news',posts,row);
+           $(idElement + " .content").append(content);
+           row++;
+        }
 
       }
    });
-   return postarray;
+}
+
+//get post list
+function loadMore(idElement,type,page,nposts,exclude){
+
+   var dados = {
+      'type': type,
+      'page': page,
+      'nposts': nposts,
+      'exclude': exclude,
+      'action': 'postList'
+   }
+
+   $.ajax({
+      type: 'POST',
+      url: window.location.origin + '/posfg/wp-admin/admin-ajax.php',
+      data: dados,
+      success: function( response ){
+        posts = JSON.parse(response);
+        if (posts.length != 0) {
+          var row = 0;
+          //busca os post ao carregar a pagina
+          while (row < posts.length ) {
+             var content = contentGenerator('news',posts,row);
+             $(idElement + " .content").append(content);
+             row++;
+           }
+
+        } else {
+           $(idElement + " .nav-pagination").removeClass("hide");
+           load = false;
+        }
+
+      }
+   });
+
+}
+
+function contentGenerator(type,posts,row) {
+  var content = 0;
+  if (type == 'news') {
+    content = '<div class="grid-container full post">\
+          <div class="grid-x grid-margin-x">\
+             <div class="cell small-12">\
+                <div class="grid-container padding-vertical-2">\
+                   <div class="grid-x grid-margin-x">\
+                      <div class="cell small-12 medium-3 large-3 padding-bottom-2 text-center">\
+                         <a href="' + posts[row]["link"] + '">\
+                            <img class="img-thumb" src="' + posts[row]["thumbimg"] + '">\
+                         </a>\
+                   </div>\
+                   <div class="cell small-12 medium-9 large-9">\
+                      <div class="middle-align">\
+                            <a href="' + posts[row]["link"] + '">\
+                            <h2 class="text-center medium-text-left large-text-left">' + posts[row]["title"] + '</h2>\
+                            </a>\
+                            <p>' + posts[row]["short"] + '</p>\
+                      </div>\
+                   </div>\
+                </div>\
+             </div>\
+          </div>\
+       </div>\
+    </div>';
+  }
+  return content;
 }
 
 function videocaller(videoID){
