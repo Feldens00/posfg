@@ -38,7 +38,7 @@ get_header(); ?>
 	   </div>
 	</div>
 
-	<?php get_template_part('components/highlight'); ?>
+	<?php get_template_part('sections/highlight'); ?>
 
 	<!-- partner -->
 	<div class="grid-container full" style="background-image: url(https://trello-attachments.s3.amazonaws.com/5be0325a009b196c5d3cd231/5d1dec79d9ced17214753f7b/efd175b75381dd00a28afde1e4b56736/bg-0002.png);">

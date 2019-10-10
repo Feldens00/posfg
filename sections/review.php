@@ -1,13 +1,14 @@
 <!-- reviews -->
 <?php
+	$post = get_post();
     $query_args = array(
       'post_type' => 'review',
-      'posts_per_page' => 4,
+      'posts_per_page' => 5,
       'tax_query' => array(
         array(
           'taxonomy' => 'category_review',
           'field'    => 'slug',
-          'terms'    => 'pediatria'
+          'terms'    =>  $post->post_name
         ),
       ),
     );

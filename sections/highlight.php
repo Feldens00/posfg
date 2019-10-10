@@ -1,13 +1,13 @@
 <!-- highlights -->
 <?php
     $query_args = array(
-      'post_type' => 'post',
+      'post_type' => 'news',
       'posts_per_page' => 5,
       'tax_query' => array(
         array(
-          'taxonomy' => 'category',
+          'taxonomy' => 'category_news',
           'field'    => 'slug',
-          'terms'    => 'sem-categoria'
+          'terms'    => 'highlight'
         ),
       ),
     );

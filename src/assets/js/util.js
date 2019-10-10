@@ -1,3 +1,28 @@
+//get post list
+function loadMore(type,page,nposts,exclude){
+
+   var dados = {
+      'type': type,
+      'page': page,
+      'nposts': nposts,
+      'exclude': exclude,
+      'action': 'postList'
+   }
+      var postarray = new Array();
+   $.ajax({
+      type: 'POST',
+      url: window.location.origin + '/posfg/wp-admin/admin-ajax.php',
+      data: dados,
+      async: false,
+      success: function( response ){
+        
+        postarray = JSON.parse(response);
+
+      }
+   });
+   return postarray;
+}
+
 function videocaller(videoID){
     html="<iframe id='ytplayer' type='text/html' width='560' height='315' src='https://www.youtube.com/embed/"+videoID+"?autoplay=1&rel=0' frameborder='0'/>";
     document.getElementById("videotarget_"+videoID).innerHTML=html;
@@ -26,3 +51,5 @@ $(window).on('resize scroll', function() {
     }
   });
 });
+
+

@@ -24,7 +24,7 @@ if ( !is_user_logged_in() ) {
 		<link href='//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="<?php echo get_template_directory_uri().'/style.css?ver='.microtime(); ?>" rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri().'/src/assets/js/util.js'; ?>"></script>
+    <!-- <script type="text/javascript" src="<?php echo get_template_directory_uri().'/src/assets/js/util.js'; ?>"></script> -->
 
 
 		<?php wp_head(); ?>
@@ -205,13 +205,14 @@ wp_nav_menu(
 			)
 		);
 ?>
+<?php get_template_part('searchform'); ?>
 </div>
 <div class="off-canvas-content" data-off-canvas-content>
   <div class="nav-bar">
       <div class="nav-bar-left">
         <?php the_custom_logo(); ?>
       </div>
-      <div class="nav-bar-right show-for-medium">
+      <div class="nav-bar-right show-for-medium menu-content">
 
 
 <?php
@@ -225,10 +226,10 @@ wp_nav_menu(
 				'fallback_cb'    => false,
 			)
 		);
-?>
+?>  
+      <?php get_template_part('searchform'); ?>
       </div>
-      <div class="nav-bar-right">
-        <?php get_template_part('searchform'); ?>
+      <div class="nav-bar-right show-for-small-only">
         <button class="offcanvas-trigger show-for-small-only icon-large" type="button" data-open="offCanvasRight"   data-hide-for="medium"><i class="fi-list"></i></button>
       </div>
   </div>

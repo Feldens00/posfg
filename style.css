@@ -118,6 +118,34 @@ body {overflow-x: hidden;}
   height: 70vh;
 }
 
+header .menu-content {
+  display: flex;
+  float: left;
+}
+
+.post:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+#list-news .img-thumb {
+  height: 200px;
+  width: auto;
+
+}
+
+#single-news .newsletter-news {
+  border: 1px solid #edeef3;
+  background-color: #edeef3;
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
 @media screen and (max-width: 768px) {
   #banner-home img {
     height: 50vh;

@@ -23,6 +23,9 @@ require_once('library/terms.php');
 /** functions for widgets, menus and other utilities */
 require_once('library/util.php');
 
+/** functions for lists */
+require_once('library/postlist.php');
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 
@@ -63,5 +66,6 @@ require_once( 'library/responsive-images.php' );
 /** Gutenberg editor support */
 require_once( 'library/gutenberg.php' );
 
-/** If your site requires protocol relative url's for theme assets, uncomment the line below */
+/** If your site requires protocol relative url's for theme assets, uncomment the line below **/
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+

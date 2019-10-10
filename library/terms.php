@@ -7,7 +7,7 @@ function register_terms(){
     array(
       'name' => 'Destaque',
       'description' => 'Não altere o slug deste termo',
-      'slug' => 'hightlight',
+      'slug' => 'highlight',
       'taxonomy' => 'category_news' 
     ),
     array(

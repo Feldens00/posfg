@@ -113,7 +113,7 @@
 	   </div>
 	</div>
 
-	<?php get_template_part('components/review'); ?>
+	<?php get_template_part('sections/review'); ?>
 
 <?php endwhile; ?>
 <?php else: ?>

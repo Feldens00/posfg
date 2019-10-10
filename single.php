@@ -8,8 +8,8 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
-<div class="main main-container-fluid">
+<!-- <?php get_template_part( 'template-parts/featured-image' ); ?>
+ --><div class="main main-container-fluid">
 	
 	<?php 
 	    $lists = array('course','news','unity');
