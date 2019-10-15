@@ -25,7 +25,7 @@
                 <?php while ($the_query->have_posts()): $the_query->the_post();?>
 
                 <div class="cell small-auto medium-auto large-auto text-center container-hover">
-                  <a href="<?php echo get_post_permalink(); ?>">
+                  <a href="<?php echo get_post_permalink(); ?>" name="btn-link-post">
                     <div class="cell small-12 image-overlay" style="background-image: url(<?php echo get_the_post_thumbnail_url();?>); background-size: cover; background-position: center; height: 200px;">
                     </div>
                     <div class="content-hover">

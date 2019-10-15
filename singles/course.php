@@ -1,13 +1,17 @@
 <!-- single post course -->
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<!-- header post -->
-	<div class="grid-container full" style="background-image: url(https://trello-attachments.s3.amazonaws.com/5be0325a009b196c5d3cd231/5d1dec79d9ced17214753f7b/efd175b75381dd00a28afde1e4b56736/bg-0002.png);">
+	<div class="grid-container full" style="background-image: url(<?php the_field('course-banner'); ?>);background-size:cover; background-repeat: no-repeat;">
 	   <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	         <div class="grid-container">
 	            <div class="grid-x grid-margin-x">
-	            	<div class="cell small-12 medium-6 large-6">
-	            		<img src="https://cdn.pixabay.com/photo/2017/10/28/05/08/knight-2896210_960_720.png" width="300" height="150">
+	            	<div class="cell small-12 medium-6 large-6 text-center">
+	            		<?php 
+	            		$image = get_field('course-icon');
+	            		if( !empty( $image ) ): ?>
+	            			<img src="<?php echo esc_url($image['url']); ?>" width="300" height="150" alt="<?php echo esc_attr($image['alt']); ?>">
+	            		<?php endif; ?>
 	            	</div>
 	            	<div class="cell small-12 medium-6 large-6 padding-vertical-2">
 	               		<div class="middle-align">

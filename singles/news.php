@@ -3,7 +3,7 @@
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- header post -->
-		<div class="grid-container full" style="background-image: url(https://trello-attachments.s3.amazonaws.com/5be0325a009b196c5d3cd231/5d1dec79d9ced17214753f7b/efd175b75381dd00a28afde1e4b56736/bg-0002.png);height:50vh;">
+		<div class="grid-container full" style="background-image: url(<?php the_field('background-banner'); ?>);background-size: cover; background-repeat: no-repeat; height:50vh;">
 		</div>
 
 		<!-- title - date -->
@@ -16,10 +16,10 @@
 	 				            <div class="grid-x grid-margin-x">
 	 				            	<div class="cell small-12 medium-12 large-12">
 	 				            		<div class="grid-x">
-	 					            		<div class="cell small-6">
+	 					            		<div class="cell small-12 medium-8 large-8">
 	 					            			<h3><?php the_title();?></h3>
 	 					            		</div>
-	 					            		<div class="cell small-6 text-right">
+	 					            		<div class="cell small-12 medium-4 large-4 text-right">
 	 											<?php the_date( 'Y-m-d', '<h4>', '</h4>' ); ?>
 	 					            		</div>
 	 				            		</div>

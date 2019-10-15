@@ -33,7 +33,7 @@ if (function_exists('acf_add_local_field_group')) {
         'type' => 'image',
         'max_size' => '', // 256KB
         'mime_types' => 'png, jpg,jpeg',
-        'return_format' => 'url', 
+        'return_format' => 'array', 
       ),
     ),
     'location' => array (

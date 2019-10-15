@@ -66,7 +66,7 @@ function loadMore(idElement,type,page,nposts,exclude){
 
 function contentGenerator(type,posts,row) {
   var content = 0;
-  if (type == 'news') {
+  if (type == 'news' || type == 'course') {
     content = '<div class="grid-container full post">\
           <div class="grid-x grid-margin-x">\
              <div class="cell small-12">\
@@ -74,12 +74,12 @@ function contentGenerator(type,posts,row) {
                    <div class="grid-x grid-margin-x">\
                       <div class="cell small-12 medium-3 large-3 padding-bottom-2 text-center">\
                          <a href="' + posts[row]["link"] + '">\
-                            <img class="img-thumb" src="' + posts[row]["thumbimg"] + '">\
+                            <img class="img-thumb" alt="'+ posts[row]["title"] +'" src="' + posts[row]["thumbimg"] + '">\
                          </a>\
                    </div>\
                    <div class="cell small-12 medium-9 large-9">\
                       <div class="middle-align">\
-                            <a href="' + posts[row]["link"] + '">\
+                            <a href="' + posts[row]["link"] + '" name="btn-link-post">\
                             <h2 class="text-center medium-text-left large-text-left">' + posts[row]["title"] + '</h2>\
                             </a>\
                             <p>' + posts[row]["short"] + '</p>\
@@ -102,15 +102,15 @@ function videocaller(videoID){
 //setTimeout(function(){ videocaller('<?php echo $VideoID; ?>'); console.log("Chamei videocaller") }, 5000);
 
 
-$.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = elementTop + $(this).outerHeight();
+// $.fn.isInViewport = function() {
+//   var elementTop = $(this).offset().top;
+//   var elementBottom = elementTop + $(this).outerHeight();
 
-  var viewportTop = $(window).scrollTop();
-  var viewportBottom = viewportTop + $(window).height();
+//   var viewportTop = $(window).scrollTop();
+//   var viewportBottom = viewportTop + $(window).height();
 
-  return elementBottom > viewportTop && elementTop < viewportBottom;
-};
+//   return elementBottom > viewportTop && elementTop < viewportBottom;
+// };
 
 $(window).on('resize scroll', function() {
   $('.checkdiv').each(function() {

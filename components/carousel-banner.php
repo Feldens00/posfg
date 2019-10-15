@@ -32,10 +32,16 @@
 		  					               	<div class="middle-align">
 		  					               		<h2 class="white-text"><?php the_field('title-banner'); ?></h2>
 		  					               		<p class="white-text"><?php the_field('text-banner'); ?></p>
-		  					               		<a href="<?php echo get_post_permalink();?>" class="button secondary">Saiba Mais</a>
+		  					               		<a href="<?php echo get_post_permalink();?>" class="button secondary" name="btn-link-post">Saiba Mais</a>
 		  					               	</div>
 		  					               </div>
-		  					               <div class="cell small-12 medium-6 large-6 text-center"><img src="<?php the_field('icon-banner'); ?>"></div>
+		  					               <div class="cell small-12 medium-6 large-6 text-center">
+		  					               	<?php 
+		  					               	$image = get_field('icon-banner');
+		  					               	if( !empty( $image ) ): ?>
+		  					               		<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+		  					               	<?php endif; ?>
+		  					               </div>
 		  					            </div>
 		  					         </div>
 		  					      </div>    

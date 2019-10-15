@@ -4,6 +4,24 @@ if (function_exists('acf_add_local_field_group')) {
     'key' => 'group_1',
     'title' => 'Curso',
     'fields' => array (
+      array (
+        'key' => 'course-banner',
+        'label' => 'Fundo do banner',
+        'name' => 'course-banner',
+        'type' => 'image',
+        'max_size' => '', // 256KB
+        'mime_types' => 'png, jpg,jpeg',
+        'return_format' => 'url', 
+      ),
+      array (
+        'key' => 'course-icon',
+        'label' => 'Icone do banner',
+        'name' => 'course-icon',
+        'type' => 'image',
+        'max_size' => '', // 256KB
+        'mime_types' => 'png, jpg,jpeg',
+        'return_format' => 'array', 
+      ),
       array(
         'key' => 'course-description',
         'label' => 'Descrição do curso',
