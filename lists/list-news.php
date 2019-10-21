@@ -19,18 +19,18 @@
 <script type="text/javascript">
    load = true;
    jQuery(document).ready(function($) {
-
+      var category = 0;
       var contpage = 0;
       var npostspage = <?php echo  get_option( 'posts_per_page' ); ?> ;
       var exclude = 0;
-      firstLoad('#list-news','news',contpage,npostspage,exclude); 
+      firstLoad(category,'#list-news','news',contpage,npostspage,exclude); 
 
       //carrega posts ao chegar ao fim da pagina
       $(window).scroll(function() {
          if($(window).scrollTop() + $(window).height() == $(document).height()  && load == true) {
             
             contpage++;
-            loadMore('#list-news','news',contpage,npostspage,exclude); 
+            loadMore(category,'#list-news','news',contpage,npostspage,exclude); 
             
          }
       });

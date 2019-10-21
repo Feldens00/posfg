@@ -10,16 +10,27 @@
         $nposts = $_POST['nposts'];
         $page = $_POST['page'];
         $exclude = $_POST['exclude'];
+        $category = $_POST['category'];;
         $offset = $page * $nposts;
         
         if(isset($page) && isset($posttype) && isset($nposts)){
             
-            if($exclude == '0'){
+            if($exclude == '0'){ $exclude = ''; }
+
+            if($posttype == 'course' && $category != 0) {
 
                 $args = array(
                 'posts_per_page' => $nposts,
                 'offset'         => $offset,
-                'post_type'       => $posttype
+                'post_type'      => $posttype,
+                'exclude'        => $exclude,
+                    'tax_query' => array(
+                      array(
+                          'taxonomy' => 'category_course', // you can change it according to your taxonomy
+                          'field' => 'slug', // this can be 'term_id', 'slug' & 'name'
+                          'terms' => $category
+                      )
+                    )                
                 );
 
             } else {
@@ -28,8 +39,7 @@
                 'posts_per_page' => $nposts,
                 'offset'         => $offset,
                 'post_type'      => $posttype,
-                'exclude'        => $exclude
-                
+                'exclude'        => $exclude                
                 );
             }
 
@@ -41,7 +51,11 @@
                 foreach ( $myposts as $selpost ) {
                     setup_postdata( $selpost );
                     ob_start(); $featimg=get_the_post_thumbnail_url($selpost->ID, 'full'); ob_end_clean();
-                    ob_start(); $thumb=get_the_post_thumbnail_url($selpost->ID, 'thumbnail'); ob_end_clean();
+                    ob_start(); $thumbnail_id = get_post_thumbnail_id( $selpost->ID ); ob_end_clean();
+                    ob_start(); $resultalt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ob_end_clean();
+                    ob_start(); $resultthumb=get_the_post_thumbnail_url($selpost->ID, 'thumbnail'); ob_end_clean();
+                    $thumb = ($resultthumb != null) ? $resultthumb : get_template_directory_uri().'/src/assets/images/icon-no-image.png';
+                    $alt = ($resultalt != null) ? $resultalt : 'Titulo da imagem inexistente';
                     $excerpt=get_the_excerpt($selpost->ID);
                     $permalink=get_permalink($selpost->ID);
                     $temparr=Array(
@@ -52,7 +66,9 @@
                         "full"=>'',
                         "link"=>trim($permalink),
                         "featimg"=>$featimg,
-                        "thumbimg"=>$thumb);
+                        "thumbimg"=>$thumb,
+                        "thumbalt"=>$alt
+                    );
                     array_push($returnarray,$temparr);            
                 }
                 wp_reset_postdata();

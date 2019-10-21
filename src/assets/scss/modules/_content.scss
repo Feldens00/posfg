@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .main-container {
   @include xy-grid-container;
 }
@@ -50,5 +53,56 @@
       margin-top: 1rem;
     }
 
+  }
+}
+
+/** === by Feldens === */
+
+.bg-texture {
+  background-size:cover; 
+  background-repeat: no-repeat;
+  min-height: 20rem;
+}
+
+.main{
+  padding-top: 90px;
+}
+
+.container-hover {
+  position: relative;
+  background-color: black;
+}
+
+.content-hover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container-hover:hover .image-overlay {
+  opacity: 0.3;
+}
+
+.container-hover:hover .content-hover {
+  opacity: 1;
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+.wpcf7-form {
+  span input, textarea {
+    background-color: $light-grey;
+    border: solid 1px $light-grey;
   }
 }

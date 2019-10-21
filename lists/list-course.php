@@ -20,17 +20,23 @@
    load = true;
    jQuery(document).ready(function($) {
 
+      var categorycourse = '<?php echo $_GET['category_course'];?>';
       var contpage = 0;
       var npostspage = <?php echo  get_option( 'posts_per_page' ); ?> ;
       var exclude = 0;
-      firstLoad('#list-course','course',contpage,npostspage,exclude); 
+
+      if (categorycourse == null) {
+         categorycourse = 0;
+      }
+      
+      firstLoad(categorycourse,'#list-course','course',contpage,npostspage,exclude); 
 
       //carrega posts ao chegar ao fim da pagina
       $(window).scroll(function() {
          if($(window).scrollTop() + $(window).height() == $(document).height()  && load == true) {
             
             contpage++;
-            loadMore('#list-course','course',contpage,npostspage,exclude); 
+            loadMore(categorycourse,'#list-course','course',contpage,npostspage,exclude); 
             
          }
       });

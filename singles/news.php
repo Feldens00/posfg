@@ -3,7 +3,10 @@
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- header post -->
-		<div class="grid-container full" style="background-image: url(<?php the_field('background-banner'); ?>);background-size: cover; background-repeat: no-repeat; height:50vh;">
+		<?php 
+		$background = get_field('background-banner');
+		$background = ($background != null) ? $background : get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>
+		<div class="grid-container full bg-texture" style="background-image: url(<?php echo $background; ?>);">
 		</div>
 
 		<!-- title - date -->
@@ -17,13 +20,13 @@
 	 				            	<div class="cell small-12 medium-12 large-12">
 	 				            		<div class="grid-x">
 	 					            		<div class="cell small-12 medium-8 large-8">
-	 					            			<h3><?php the_title();?></h3>
+	 					            			<h4 class="color-primary"><?php the_title();?></h4>
 	 					            		</div>
 	 					            		<div class="cell small-12 medium-4 large-4 text-right">
-	 											<?php the_date( 'Y-m-d', '<h4>', '</h4>' ); ?>
+	 											<?php the_date( 'Y-m-d', '<h4 class="color-primary">', '</h4>' ); ?>
 	 					            		</div>
 	 				            		</div>
-	 				            		<hr>
+	 				            		<hr class="custom-hr">
 	 				            	</div>
 	 				               	<div class="cell small-12 medium-12 large-12 padding-top-2">
 	 				               			<?php the_content(); ?>

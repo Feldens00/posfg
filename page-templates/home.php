@@ -3,18 +3,18 @@
 Template Name: Home
 */
 get_header(); ?>
-<div class="main main-container-fluid">
+<div class="main main-container-fluid" id="page-home">
 	
 	<?php get_template_part('components/carousel-banner'); ?>
 	
 	<!-- specialties -->
-	<div class="grid-container full" style="background-color: #d3d3d3;">
+	<div class="grid-container full bg-light-grey">
 	   <div class="grid-x grid-margin-x grid-padding-y">
 	      <div class="cell small-12">
 	         <div class="grid-container">
 	            <div class="grid-x grid-margin-x">
 	            	<div class="cell small-12 text-center margin-bottom-1">
-		               	<h4>INVISTA NO SEU POTENCIAL</h4>
+		               	<h4 class="color-primary">INVISTA NO SEU POTENCIAL</h4>
 		               	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	              	</div>
 	               	<div class="cell small-12 medium-4 large-4 text-center">
@@ -41,7 +41,7 @@ get_header(); ?>
 	<?php get_template_part('sections/highlight'); ?>
 
 	<!-- partner -->
-	<div class="grid-container full" style="background-image: url(https://trello-attachments.s3.amazonaws.com/5be0325a009b196c5d3cd231/5d1dec79d9ced17214753f7b/efd175b75381dd00a28afde1e4b56736/bg-0002.png);">
+	<div class="grid-container full bg-texture" style="background-image: url(<?php echo get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>);">
 	   <div class="grid-x grid-margin-x grid-padding-y">
 	      <div class="cell small-12">
 	         <div class="grid-container">
@@ -67,7 +67,7 @@ get_header(); ?>
 			           	<div class="grid-container">
 			           	    <div class="grid-x grid-padding-x">
 			           	    	<div class="medium-12 cell text-center">
-			           	    		<h4>INSCREVA-SE</h4>
+			           	    		<h4 class="color-primary">INSCREVA-SE</h4>
 			           	    	</div>
 		           	      	    <?php 
 		           	          	    $subscribe = Util::getWidget('subscribe-form'); 
@@ -80,7 +80,7 @@ get_header(); ?>
 			           	  <div class="grid-container">
 			           	    <div class="grid-x grid-padding-x">
 			           	    	<div class="medium-12 cell text-center">
-			           	    		<h4>NEWSLETTER</h4>
+			           	    		<h4 class="color-primary">NEWSLETTER</h4>
 			           	    	</div>
 		           	      	    <?php 
 		           	          	    $newsletter = Util::getWidget('newsletter-course'); 

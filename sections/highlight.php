@@ -20,7 +20,7 @@
          <div class="grid-container">
             <div class="grid-x grid-margin-x grid-margin-y">
                 <div class="cell small-12 text-center margin-bottom-1">
-                  <h4>DESTAQUES</h4>
+                  <h4 class="color-primary">DESTAQUES</h4>
                 </div>
                 <?php while ($the_query->have_posts()): $the_query->the_post();?>
 

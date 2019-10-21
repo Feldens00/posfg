@@ -1,0 +1,19 @@
+.videoimage{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position: center center;
+}
+
+.videotarget{
+   cursor:pointer;
+   width:90vw;
+   height:calc(90vw / 1.83 );
+   max-width: 640px;
+   max-height: 360px;
+   background-color:#000000;
+}
+
+.widget_text {
+  width: 100%;
+}

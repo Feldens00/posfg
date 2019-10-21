@@ -1,11 +1,12 @@
-function firstLoad(idElement,type,page,nposts,exclude){
+function firstLoad(category,idElement,type,page,nposts,exclude){
 
    var dados = {
       'type': type,
       'page': page,
       'nposts': nposts,
       'exclude': exclude,
-      'action': 'postList'
+      'action': 'postList',
+      'category': category
    }
  
    $.ajax({
@@ -29,14 +30,15 @@ function firstLoad(idElement,type,page,nposts,exclude){
 }
 
 //get post list
-function loadMore(idElement,type,page,nposts,exclude){
+function loadMore(category,idElement,type,page,nposts,exclude){
 
    var dados = {
       'type': type,
       'page': page,
       'nposts': nposts,
       'exclude': exclude,
-      'action': 'postList'
+      'action': 'postList',
+      'category': category
    }
 
    $.ajax({
@@ -74,13 +76,13 @@ function contentGenerator(type,posts,row) {
                    <div class="grid-x grid-margin-x">\
                       <div class="cell small-12 medium-3 large-3 padding-bottom-2 text-center">\
                          <a href="' + posts[row]["link"] + '">\
-                            <img class="img-thumb" alt="'+ posts[row]["title"] +'" src="' + posts[row]["thumbimg"] + '">\
+                            <img class="img-thumb" alt="'+ posts[row]["thumbalt"] +'" src="' + posts[row]["thumbimg"] + '">\
                          </a>\
                    </div>\
                    <div class="cell small-12 medium-9 large-9">\
                       <div class="middle-align">\
                             <a href="' + posts[row]["link"] + '" name="btn-link-post">\
-                            <h2 class="text-center medium-text-left large-text-left">' + posts[row]["title"] + '</h2>\
+                            <h2 class="text-center medium-text-left large-text-left color-primary">' + posts[row]["title"] + '</h2>\
                             </a>\
                             <p>' + posts[row]["short"] + '</p>\
                       </div>\

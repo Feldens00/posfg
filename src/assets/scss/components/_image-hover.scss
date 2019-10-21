@@ -34,3 +34,13 @@ $image-overlay-transition: .5s ease;
   opacity: 1;
 }
 
+/** === by Feldens === */
+
+.image-overlay{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}

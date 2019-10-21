@@ -1,0 +1,11 @@
+#page-home {
+	#banner-home img {
+	  height: 70vh;
+	}
+
+	@media screen and (max-width: 768px) {
+	  #banner-home img {
+	    height: 50vh;
+	  }
+	}
+}

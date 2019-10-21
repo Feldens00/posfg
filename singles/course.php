@@ -1,7 +1,10 @@
 <!-- single post course -->
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<!-- header post -->
-	<div class="grid-container full" style="background-image: url(<?php the_field('course-banner'); ?>);background-size:cover; background-repeat: no-repeat;">
+	<?php 
+	$background = get_field('course-banner');
+	$background = ($background != null) ? $background : get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>
+	<div class="grid-container full bg-texture" style="background-image: url(<?php echo $background; ?>);">
 	   <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	         <div class="grid-container">
@@ -47,7 +50,7 @@
 	</div>
 
 	<!-- information -->
-	<div class="grid-container full padding-vertical-3" style="background-image: url(https://trello-attachments.s3.amazonaws.com/5be0325a009b196c5d3cd231/5d1dec79d9ced17214753f7b/efd175b75381dd00a28afde1e4b56736/bg-0002.png);">
+	<div class="grid-container full padding-vertical-3 bg-texture" style="background-image: url(<?php echo get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>);">
 	   <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	         <div class="grid-container">

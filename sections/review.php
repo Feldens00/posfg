@@ -23,9 +23,9 @@
 		               	<h4>O QUE OS ALUNOS DIZEM</h4>
 	              	</div>
 	              	<?php while ($the_query->have_posts()): $the_query->the_post();?>
-	               	<div class="cell small-auto medium-auto large-auto text-center">
-			           	<div class="radius bordered shadow card">
-			           	  <img src="<?php the_post_thumbnail_url();?>">
+	               	<div class="cell small-auto medium-auto large-auto text-center padding-bottom-1">
+			           	<div class="radius bordered shadow">
+			           	  <img src="<?php the_post_thumbnail_url();?>" class="img-cards">
 			           	  <div class="card-divider">
 			           	    <?php the_title(); ?>
 			           	  </div>

@@ -55,3 +55,13 @@ p.wp-caption-text{
     @include thumbnail;
   }
 }
+
+/** === by Feldens === */
+
+.middle-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
