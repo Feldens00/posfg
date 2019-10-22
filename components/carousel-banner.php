@@ -26,7 +26,7 @@
 						  	<div class="grid-container full">
 		  					   <div class="grid-x grid-margin-x">
 		  					      <div class="cell small-12"  style="background-image: url(<?php the_field('background-banner'); ?>);background-size: cover; background-position: center;">
-		  					         <div class="grid-container">
+		  					         <div class="grid-container padding-vertical-2">
 		  					            <div class="grid-x grid-margin-x">
 		  					               <div class="cell small-12 medium-6 large-6 align-middle padding-vertical-2">
 		  					               	<div class="middle-align">
@@ -35,12 +35,10 @@
 		  					               		<a href="<?php echo get_post_permalink();?>" class="button secondary" name="btn-link-post">Saiba Mais</a>
 		  					               	</div>
 		  					               </div>
-		  					               <div class="cell small-12 medium-6 large-6 text-center">
-		  					               	<?php 
-		  					               	$image = get_field('icon-banner');
-		  					               	if( !empty( $image ) ): ?>
-		  					               		<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-		  					               	<?php endif; ?>
+		  					               <?php 
+		  					            	$image = get_field('icon-banner');
+		  					             	$url = !empty($image) ? get_template_directory_uri().'/src/assets/images/icon-no-image.png' : esc_url($image['url']); ?>
+		  					               <div class="cell small-12 medium-6 large-6 text-center icon-banner" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
 		  					               </div>
 		  					            </div>
 		  					         </div>

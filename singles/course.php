@@ -1,4 +1,5 @@
 <!-- single post course -->
+<div id="single-course">
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<!-- header post -->
 	<?php 
@@ -7,13 +8,13 @@
 	<div class="grid-container full bg-texture" style="background-image: url(<?php echo $background; ?>);">
 	   <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
-	         <div class="grid-container">
+	         <div class="grid-container padding-vertical-2">
 	            <div class="grid-x grid-margin-x">
 	            	<div class="cell small-12 medium-6 large-6 text-center">
 	            		<?php 
 	            		$image = get_field('course-icon');
 	            		if( !empty( $image ) ): ?>
-	            			<img src="<?php echo esc_url($image['url']); ?>" width="300" height="150" alt="<?php echo esc_attr($image['alt']); ?>">
+	            			<img src="<?php echo esc_url($image['url']); ?>" class="icon-banner" alt="<?php echo esc_attr($image['alt']); ?>">
 	            		<?php endif; ?>
 	            	</div>
 	            	<div class="cell small-12 medium-6 large-6 padding-vertical-2">
@@ -128,4 +129,5 @@
         <h1>O post não foi encontrado</h1>
 
 <?php endif; ?>
+</div>
 <!-- /single post course -->

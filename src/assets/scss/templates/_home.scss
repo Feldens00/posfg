@@ -1,11 +1,16 @@
 #page-home {
-	#banner-home img {
-	  height: 70vh;
+
+	.icon-banner {
+	    height: 60vh;
+	    background-size: contain;
+	    background-position: center;
+	    background-repeat: no-repeat;
 	}
 
 	@media screen and (max-width: 768px) {
-	  #banner-home img {
-	    height: 50vh;
-	  }
+
+	   .icon-banner {
+	    	height: 40vh;
+	  	}
 	}
 }

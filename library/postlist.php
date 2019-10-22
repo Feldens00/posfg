@@ -59,7 +59,6 @@
                     $excerpt=get_the_excerpt($selpost->ID);
                     $permalink=get_permalink($selpost->ID);
                     $temparr=Array(
-                        'offset' => $offset,
                         "postid"=>$selpost->ID,
                         "title"=>trim($selpost->post_title),
                         "short"=>trim($excerpt),

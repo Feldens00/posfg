@@ -20,17 +20,17 @@
 <script type="text/javascript">
    load = true;
    jQuery(document).ready(function($) {
-
+      var category = 0;
       var contpage = 0;
       var npostspage = 3 ;
       var exclude = <?php echo get_the_ID();?>;
-      firstLoad('#related-news','news',contpage,npostspage,exclude); 
+      firstLoad(category,'#related-news','news',contpage,npostspage,exclude); 
 
       //carrega posts ao chegar ao fim da pagina
       $(window).scroll(function() {
          if($(window).scrollTop() + window.innerHeight >= $(document).height() - 1  && load == true) {
             contpage++;
-            loadMore('#related-news','news',contpage,npostspage,exclude); 
+            loadMore(category,'#related-news','news',contpage,npostspage,exclude); 
             
          }
       });

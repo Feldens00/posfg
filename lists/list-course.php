@@ -33,7 +33,7 @@
 
       //carrega posts ao chegar ao fim da pagina
       $(window).scroll(function() {
-         if($(window).scrollTop() + $(window).height() == $(document).height()  && load == true) {
+         if($(window).scrollTop() + window.innerHeight >= $(document).height() - 1  && load == true) {
             
             contpage++;
             loadMore(categorycourse,'#list-course','course',contpage,npostspage,exclude); 
