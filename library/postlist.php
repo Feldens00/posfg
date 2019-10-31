@@ -33,6 +33,23 @@
                     )                
                 );
 
+            }
+
+            if($posttype == 'news' && $category == 'highlight') {
+                $args = array(
+                'posts_per_page' => $nposts,
+                'offset'         => $offset,
+                'post_type'      => $posttype,
+                'exclude'        => $exclude,
+                    'tax_query' => array(
+                      array(
+                          'taxonomy' => 'category_news', // you can change it according to your taxonomy
+                          'field' => 'slug', // this can be 'term_id', 'slug' & 'name'
+                          'terms' => $category
+                      )
+                    )                
+                );
+
             } else {
 
                 $args = array(

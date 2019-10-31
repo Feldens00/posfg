@@ -12,7 +12,7 @@ get_header(); ?>
  --><div class="main main-container-fluid">
 	
 	<?php 
-	    $lists = array('course','news','unity');
+	    $lists = array('course','news','unit');
 	    if (in_array(get_post_type(), $lists)) {
 	        get_template_part('singles/' . get_post_type());
 	    } else {

@@ -18,17 +18,17 @@ get_header(); ?>
 		               	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	              	</div>
 	               	<div class="cell small-12 medium-4 large-4 text-center">
-		               	<i class="fa fa-android" style="font-size:36px; color: grey;"></i>
+		               	<i class="fas fa-user fa-3x" style="color: grey;"></i>
 		               	<h6>SUPORTE ACADÊMICO</h6>
 		               	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id auctor quam. Ut vel nulla vitae sem hendrerit fringilla nec sit amet mauris.</p>
 	               	</div>
 	               	<div class="cell small-12 medium-4 large-4 text-center">
-		               	<i class="fa fa-android" style="font-size:36px; color: grey;"></i>
+		               	<i class="fas fa-user fa-3x" style="color: grey;"></i>
 		               	<h6>AMBIENTE VIRTUAL</h6>
 		               	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id auctor quam. Ut vel nulla vitae sem hendrerit fringilla nec sit amet mauris.</p>
 	               	</div>
 	               	<div class="cell small-12 medium-4 large-4 text-center">
-	               		<i class="fa fa-android" style="font-size:36px; color: grey;"></i>
+	               		<i class="fas fa-user fa-3x" style="color: grey;"></i>
 	               		<h6>CONDIÇÕES E MENSALIDADES ACESSÍVEIS</h6>
 	               		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id auctor quam. Ut vel nulla vitae sem hendrerit fringilla nec sit amet mauris.</p>
 	               	</div>

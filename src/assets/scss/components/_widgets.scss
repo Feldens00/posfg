@@ -7,7 +7,7 @@
 
 .videotarget{
    cursor:pointer;
-   width:90vw;
+   width: 100%;
    height:calc(90vw / 1.83 );
    max-width: 640px;
    max-height: 360px;
@@ -16,4 +16,11 @@
 
 .widget_text {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .videotarget{
+    height: 50vh;
+  }
 }

@@ -74,6 +74,13 @@ function copy() {
     .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
+// Copy files JS of node modules
+function copyModuleJs() {
+  return gulp.src(PATHS.js)
+    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+}
+
+
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
@@ -248,7 +255,7 @@ function watch() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(sass, 'webpack:build', images, copy)));
+  gulp.series(clean, gulp.parallel(sass, 'webpack:build', images, copy,copyModuleJs)));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',

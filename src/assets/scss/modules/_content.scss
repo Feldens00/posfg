@@ -106,3 +106,35 @@ body {
     border: solid 1px $light-grey;
   }
 }
+
+.search-form { 
+  width: 42px; 
+  transition: ease all .3s;
+  
+  .search-submit {
+    padding-left: 10px;
+  }
+
+  .input-group-field {
+    border: none;
+    border-bottom: 1px solid black;
+    box-shadow: none;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .icon-search {
+    color: $blue;
+  }
+}
+
+.search-form:hover {
+  width: 220px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .search-form:hover {
+    width: 100%;
+  }
+}

@@ -10,3 +10,7 @@ require_once(get_template_directory().'/library/post-type/news/functions.php');
 // review
 require_once(get_template_directory().'/library/post-type/review/post.php');
 require_once(get_template_directory().'/library/post-type/review/functions.php');
+// unit
+require_once(get_template_directory().'/library/post-type/unit/post.php');
+require_once(get_template_directory().'/library/post-type/unit/field.php');
+require_once(get_template_directory().'/library/post-type/unit/functions.php');

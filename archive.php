@@ -20,7 +20,7 @@ get_header(); ?>
 <div class="main main-container-fluid">
 
 	<?php
-	    $customLists = array('news','course');
+	    $customLists = array('news','course','unit');
 	    if (in_array(get_post_type(), $customLists)) {
 	        get_template_part('lists/list-' . get_post_type());
 	    } else {

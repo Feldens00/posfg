@@ -20,7 +20,7 @@ function firstLoad(category,idElement,type,page,nposts,exclude){
         //busca os post ao carregar a pagina
         while (row < posts.length) {
 
-           var content = contentGenerator('news',posts,row);
+           var content = contentGenerator(type,posts,row,category);
            $(idElement + " .content").append(content);
            row++;
         }
@@ -51,7 +51,7 @@ function loadMore(category,idElement,type,page,nposts,exclude){
           var row = 0;
           //busca os post ao carregar a pagina
           while (row < posts.length ) {
-             var content = contentGenerator('news',posts,row);
+             var content = contentGenerator(type,posts,row,category);
              $(idElement + " .content").append(content);
              row++;
            }
@@ -66,7 +66,7 @@ function loadMore(category,idElement,type,page,nposts,exclude){
 
 }
 
-function contentGenerator(type,posts,row) {
+function contentGenerator(type,posts,row,category) {
   var content = 0;
   if (type == 'news' || type == 'course') {
     content = '<div class="grid-container full post">\
@@ -93,11 +93,33 @@ function contentGenerator(type,posts,row) {
        </div>\
     </div>';
   }
+
+  if (type == 'unit') {
+    content = '<div class="cell small-auto medium-3 large-3 text-center">\
+      <a href="' + posts[row]["link"] + '">\
+        <img alt="'+ posts[row]["thumbalt"] +'" src="'+ posts[row]["thumbimg"] + '">\
+      </a>\
+      <h5 class="color-primary">' + posts[row]["title"] + '</h5>\
+    </div>';
+  }
+
+  if (type == 'news' && category == 'highlight') {
+    content = '<div class="cell small-auto medium-auto large-auto text-center container-hover">\
+      <a href="' + posts[row]["link"] + '" name="btn-link-post">\
+        <div class="cell small-12 image-overlay" style="background-image: url('+ posts[row]["thumbimg"] + ');">\
+        </div>\
+        <div class="content-hover">\
+            <p class="white-text">' + posts[row]["title"] + '</p>\
+        </div>\
+      </a>\
+    </div>';
+  }
+
   return content;
 }
 
 function videocaller(videoID){
-    html="<iframe id='ytplayer' type='text/html' width='560' height='315' src='https://www.youtube.com/embed/"+videoID+"?autoplay=1&rel=0' frameborder='0'/>";
+    html="<iframe id='ytplayer' type='text/html' width='100%' height='95%' src='https://www.youtube.com/embed/"+videoID+"?autoplay=1&rel=0' frameborder='0'/>";
     document.getElementById("videotarget_"+videoID).innerHTML=html;
 }
 

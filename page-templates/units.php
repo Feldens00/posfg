@@ -10,7 +10,7 @@ get_header(); ?>
         width: 100%;  /* The width is the width of the web page */
        }
     </style>
-	<div class="main main-container-fluid">
+	<div class="main main-container-fluid" id="page-units">
 	
 		<!-- specialties -->
 		<div class="grid-container full">
@@ -18,10 +18,8 @@ get_header(); ?>
 		      <div class="cell small-12">
 		         <div class="grid-container">
 		            <div class="grid-x grid-margin-x">
-		            	<div class="cell small-12 text-center margin-bottom-1">
-			               	<h3>My Google Maps Demo</h3>
-			               	<!--The div element for the map -->
-			               	<div id="map"></div>
+		            	<div class="cell small-12 text-center margin-bottom-1" id="map-container">
+		            		<img src="<?php echo get_template_directory_uri().'/src/assets/images/brasil-map.png'; ?>" alt="Mapa do brasil" style="height: auto;max-height: 75vh;width: auto;">
 		              	</div>
 		            </div>
 		         </div>
