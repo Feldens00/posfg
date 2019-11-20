@@ -37,7 +37,7 @@
 		         				<div class="padding-horizontal-3 padding-top-2 newsletter-news text-center">
 		         					<h5>ASSINE A NEWSLETTER</h5>
 	     							<?php 
-	     					     	    $newsletter = Util::getWidget('newsletter-course'); 
+	     					     	    $newsletter = Util::getWidget('newsletter-form'); 
 	     					     	    echo $newsletter; 
 	     					 	    ?>  
 		         				</div>

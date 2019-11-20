@@ -11,12 +11,12 @@
       }
 
     }
-
+    
     @include breakpoint(medium) {
       @include xy-cell(1 of 3, true, 0.7rem );
 
     }
 
-  }  
+  }
 
 }

@@ -29,6 +29,30 @@
 	</div><!-- Close off-canvas content -->
 <?php endif; */ ?>
 
+<!-- For click-desk -->
+<?php
+$post_type = get_post_type();  
+// get post type taxonomies  
+$taxonomies = get_object_taxonomies($post_type);
+if( !empty( $taxonomies ) ){
+   $out = '';  
+   foreach ($taxonomies as $taxonomy) {           
+      // get the terms related to post  
+      $terms = get_the_terms( $post->ID, $taxonomy ); 
+
+      if ( !empty( $terms ) ) {  
+         foreach ( $terms as $term )  
+            $out .= 'category-' . strtolower ($term->slug) . ' ';  
+      }  
+   }  
+} else {
+   $out = ' ';
+}
+?>
+<script>
+   var classes_post = '<?php echo $out; ?>';
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

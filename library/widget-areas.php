@@ -26,7 +26,8 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 		//default widgets
 		$widgets = array(
             'details-course'    => 'Detalhes - Cursos',
-            'newsletter-course'    => 'Newsletter - Cursos',
+            'newsletter-form'    => 'Newsletter - Form',
+            'contact-form'    => 'Contato - Form',
             'sidebar-widgets'    => 'Sidebar - Widgets',
             'subscribe-form'    => 'Inscreva-se - Form',
         );
@@ -37,7 +38,7 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
                 'name' => $name,
                 'description' => $description,
                 'id' => $id,
-                'before_widget' => '<div id="%1$s" class="%2$s">',
+                'before_widget' => '<div class="%2$s">',
                 'after_widget' => '</div>',
                 'before_title' => '<h6>',
                 'after_title' => '</h6>'

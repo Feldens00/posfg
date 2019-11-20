@@ -44,7 +44,7 @@ get_header(); ?>
 	<div class="grid-container full bg-texture" style="background-image: url(<?php echo get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>);">
 	   <div class="grid-x grid-margin-x grid-padding-y">
 	      <div class="cell small-12">
-	         <div class="grid-container">
+	         <div class="grid-container padding-top-2">
 	            <div class="grid-x grid-margin-x">
 	            	<div class="cell small-12 text-center margin-bottom-1">
 		               	<h4 class="white-text">SEJA NOSSO PARCEIRO</h4>
@@ -83,7 +83,7 @@ get_header(); ?>
 			           	    		<h4 class="color-primary">NEWSLETTER</h4>
 			           	    	</div>
 		           	      	    <?php 
-		           	          	    $newsletter = Util::getWidget('newsletter-course'); 
+		           	          	    $newsletter = Util::getWidget('newsletter-form'); 
 		           	          	    echo $newsletter; 
 		           	      	    ?>
 			           	    </div>

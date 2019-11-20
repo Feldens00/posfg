@@ -84,7 +84,7 @@
 			           	    		<h4 class="white-text">INSCREVA-SE</h4>
 			           	    	</div>
 				           	    <?php 
-					           	    $newsletter = Util::getWidget('newsletter-course'); 
+					           	    $newsletter = Util::getWidget('newsletter-form'); 
 					           	    echo $newsletter; 
 				           	    ?>  
 			           	    </div>

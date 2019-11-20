@@ -106,7 +106,7 @@ function contentGenerator(type,posts,row,category) {
   if (type == 'news' && category == 'highlight') {
     content = '<div class="cell small-auto medium-auto large-auto text-center container-hover">\
       <a href="' + posts[row]["link"] + '" name="btn-link-post">\
-        <div class="cell small-12 image-overlay" style="background-image: url('+ posts[row]["thumbimg"] + ');">\
+        <div class="cell small-12 image-overlay" style="background-image: url('+ posts[row]["featimg"] + ');">\
         </div>\
         <div class="content-hover">\
             <p class="white-text">' + posts[row]["title"] + '</p>\
@@ -147,4 +147,12 @@ $(window).on('resize scroll', function() {
   });
 });
 
-
+/*Chat start*/
+var _glc =_glc || []; _glc.push('ag9zfmNsaWNrZGVza2NoYXRyEQsSB3dpZGdldHMYj67t8QMM');
+var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' : 
+'//my.clickdesk.com/clickdesk-ui/browser/');
+var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+var glcspt = document.createElement('script'); glcspt.type = 'text/javascript'; 
+glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
+var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+/*Chat end*/

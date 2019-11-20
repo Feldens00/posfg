@@ -68,7 +68,7 @@ wp_nav_menu(
       <?php get_template_part('searchform'); ?>
       </div>
       <div class="nav-bar-right show-for-small-only">
-        <button class="offcanvas-trigger show-for-small-only icon-large" type="button" data-open="offCanvasRight"   data-hide-for="medium"><i class="fi-list"></i></button>
+        <button class="offcanvas-trigger show-for-small-only icon-large" name="button-menu" type="button" data-open="offCanvasRight"   data-hide-for="medium"><i class="fi-list"></i></button>
       </div>
   </div>
 </div>
