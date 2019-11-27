@@ -3,7 +3,7 @@
 Template Name: Courses
 */
 get_header(); ?>
-	<div class="main main-container-fluid" id="courses">
+	<div class="main main-container-fluid" id="page-courses">
 	
 		<!-- specialties -->
 		<div class="grid-container full">
@@ -17,9 +17,10 @@ get_header(); ?>
 	    		?>
 	    		<?php foreach ($terms as $row ):?>
 
-		      	<div class="cell small-auto medium-2 large-2 text-center">
+		      	<div class="cell small-auto medium-2 large-2 text-center category-course">
 		      		<a href="<?php echo get_site_url() .'/course/?category_course='.$row->slug;?>">
-		      			<img alt="<?php echo $row->name; ?>" src="<?php echo get_template_directory_uri().'/src/assets/images/thumb-'.$row->slug.'.png'; ?>">
+		      			<div class="bg-category-course" style="background-image: url(<?php echo get_template_directory_uri().'/src/assets/images/thumb-'.$row->slug.'.png'; ?>);"></div>
+		      			<!-- <img alt="<?php echo $row->name; ?>" src="<?php echo get_template_directory_uri().'/src/assets/images/thumb-'.$row->slug.'.png'; ?>"> -->
 		      		</a>
 		      	</div> 
 

@@ -94,6 +94,20 @@ if (function_exists('acf_add_local_field_group')) {
         'name' => 'course-video-3',
         'type' => 'url',
         'required' => 0
+      ),
+      array(
+        'key' => 'course-workload',
+        'label' => 'Carga Horária do curso',
+        'name' => 'course-workload',
+        'type' => 'number',
+        'required' => 1
+      ),
+      array(
+        'key' => 'course-internship',
+        'label' => 'Tempo de Estágio do curso',
+        'name' => 'course-internship',
+        'type' => 'number',
+        'required' => 1
       )
     ),
     'location' => array (

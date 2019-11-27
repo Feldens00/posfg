@@ -19,7 +19,7 @@
 	            	</div>
 	            	<div class="cell small-12 medium-6 large-6 padding-vertical-2">
 	               		<div class="middle-align">
-	               			<h2 class="white-text"><?php the_title(); ?></h2>
+	               			<h1 class="white-text"><?php the_title(); ?></h1>
 	               			<p class="white-text"><?php the_field('course-description'); ?></p>
 	               		</div>
 	               </div>
@@ -51,7 +51,7 @@
 	</div>
 
 	<!-- information -->
-	<div class="grid-container full padding-vertical-3 bg-texture" style="background-image: url(<?php echo get_template_directory_uri().'/src/assets/images/bg-headers.png'; ?>);">
+	<div class="grid-container full padding-vertical-3 bg-texture" style="background-image: url(<?php echo $background; ?>);">
 	   <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	         <div class="grid-container">
@@ -83,7 +83,7 @@
 			           	    	<div class="medium-12 cell text-center">
 			           	    		<h4 class="white-text">INSCREVA-SE</h4>
 			           	    	</div>
-				           	    <?php 
+			           	    	<?php 
 					           	    $newsletter = Util::getWidget('newsletter-form'); 
 					           	    echo $newsletter; 
 				           	    ?>  
@@ -98,23 +98,35 @@
 	</div>
 
 	<!-- details -->
-	<div class="grid-container full" style="background-color: #5DA8E8;">
+	<div class="grid-container full padding-vertical-1" id="details">
 	   <div class="grid-x grid-margin-x grid-padding-y">
 	      <div class="cell small-12">
 	         <div class="grid-container">
-	            <div class="grid-x grid-margin-x">
-	            	<div class="cell small-12 text-center margin-bottom-1">
-		               	<h4 class="white-text">DESTAQUES</h4>
+	            <div class="grid-x grid-margin-x text-center">
+	            	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-archway fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">CORPO DOCENTE 100% COMPOSTO POR DOUTORES E MESTRES</h6>
 	              	</div>
-	              	<?php 
-	           			$array = Util::getWidgetArrayImg('details-course');
-	           			$itens = $array['items'];
-	           			foreach ($itens as $row):?>
-	           				<div class="cell small-auto medium-auto large-auto text-center">
-			           			<img src="<?php echo $row['img']?>" width="100" height="100">
-			           			<p class="white-text"><?php echo $row['title']?></p>
-	               			</div>
-	           		<?php endforeach; ?>
+	              	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-atom fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">CARGA HORÁRIA: <?php the_field('course-workload'); ?> HR</h6>
+	              	</div>
+	              	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-user-clock fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">CERTIFICADO COM VALIDADE NACIONAL</h6>
+	              	</div>
+	              	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-user-clock fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">ESTÁGIO: <?php the_field('course-internship'); ?> HR</h6>
+	              	</div>
+	              	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-award fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">SUPORTE PEDAGÓGICO 24HS</h6>
+	              	</div>
+	              	<div class="small-12 medium-auto large-auto">
+	              		<i class="fas fa-book fa-3x white-text"></i>
+	              		<h6 class="margin-top-1 white-text">RECONHECIDA EXCELÊNCIA PELO MINISTÉRIO DA EDUCAÇÃO</h6>
+	              	</div>
 	            </div>
 	         </div>
 	      </div>    

@@ -69,3 +69,15 @@ require_once( 'library/gutenberg.php' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below **/
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 
+// Search SQL filter for matching against post title only.
+add_action('pre_get_posts', 'my_make_search_exact', 10);
+function my_make_search_exact($query){
+
+    if(!is_admin() && $query->is_main_query() && $query->is_search) :
+        //$query->set('exact', true);
+        $args =  array( 'post_date' => 'ASC', 'title' => 'ASC' );
+
+    	$query->set( 'orderby', $args );
+    endif;
+
+}

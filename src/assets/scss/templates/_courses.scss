@@ -1,0 +1,20 @@
+#page-courses{
+
+	.category-course {
+		padding: 0;
+	}
+
+	.bg-category-course{
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 25vh;
+	}
+
+	@media screen and (max-width: 768px) {
+
+		.bg-category-course{
+			height: 45vh;
+		}
+	}
+}

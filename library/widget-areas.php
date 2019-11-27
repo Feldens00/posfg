@@ -25,7 +25,6 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 
 		//default widgets
 		$widgets = array(
-            'details-course'    => 'Detalhes - Cursos',
             'newsletter-form'    => 'Newsletter - Form',
             'contact-form'    => 'Contato - Form',
             'sidebar-widgets'    => 'Sidebar - Widgets',
